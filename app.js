@@ -85,7 +85,35 @@ app.post('/getListItems', async (request, response) => {
     }
 })
 
-
+app.post("/deleteListItems", async (request, response) => {
+    const userId = request.body.userId;
+    const itemId = request.body.itemId;
+    const price = request.body.price;
+    const available_quantity = request.body.available_quantity;
+    const require_quantity = request.body.require_quantity;
+    await Date.deleteOne({
+        userId: userId,
+        itemId: itemId,
+        require_quantity: require_quantity,
+        available_quantity:available_quantity,
+    })
+    // save the new user
+    // date.save()
+        // return success if the new user is added to the database successfully
+        .then((result) => {
+            response.status(201).send({
+                message: "Date Saved Suceessfully",
+                result,
+            });
+        })
+        // catch error if the new user wasn't added successfully to the database
+        .catch((error) => {
+            response.status(500).send({
+                message: "Error Saving Date",
+                error,
+            });
+        });
+});
 
 
 
