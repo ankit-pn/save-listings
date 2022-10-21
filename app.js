@@ -37,12 +37,14 @@ app.post("/addListItems", async (request, response) => {
 
     const userId = request.body.userId;
     const itemId = request.body.itemId;
+    const price = request.body.price;
     const available_quantity = request.body.available_quantity;
     const require_quantity = request.body.require_quantity;
     const vendor_address = request.body.vendor_address;
     const date = new items({
         userId: userId,
         itemId: itemId,
+        price:price,
         require_quantity: require_quantity,
         available_quantity:available_quantity,
         vendor_address:vendor_address

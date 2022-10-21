@@ -9,6 +9,10 @@ const itemListSchema = new mongoose.Schema({
         type:String,
         required: [true,'Please provide itemId']
     },
+    price:{
+        type:Number,
+        required: [true,'Please provide itemId']
+    },
     available_quantity:{
         type:Number ,
         required: [true,"Please provide Data"],
