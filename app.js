@@ -94,8 +94,10 @@ app.post("/deleteListItems", async (request, response) => {
     await Date.deleteOne({
         userId: userId,
         itemId: itemId,
+        price:price,
         require_quantity: require_quantity,
         available_quantity:available_quantity,
+        vendor_address:vendor_address
     })
     // save the new user
     // date.save()
