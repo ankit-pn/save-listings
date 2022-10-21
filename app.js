@@ -92,7 +92,7 @@ app.post("/deleteListItems", async (request, response) => {
     const available_quantity = request.body.available_quantity;
     const require_quantity = request.body.require_quantity;
     const vendor_address = request.body.vendor_address;
-    await Date.deleteOne({
+    await items.deleteOne({
         userId: userId,
         itemId: itemId,
         price:price,
